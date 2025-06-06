@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, Video, Upload, Zap, FileText, 
-  ShoppingCart, Store, Package, Megaphone, TrendingUp, ShieldCheck, Clock, CheckCircle2, Users, BarChart4, ClipboardList 
+  ShoppingCart, Store, Package, Megaphone, TrendingUp, ShieldCheck, Clock, CheckCircle2, Users, BarChart4, ClipboardList, Mic, Heart, Eye, Check 
 } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -17,66 +17,128 @@ const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#F8FAFF]">
       {/* Hero Section */}
-      <section className="pt-40 pb-32">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="max-w-5xl mx-auto text-center">
-            {/* <div className="inline-flex items-center bg-red-50 rounded-full px-3 py-1 mb-6">
-              <Video className="h-4 w-4 text-red-600 mr-2" />
-              <span className="text-sm text-red-700">Free Beta Access</span>
-            </div> */}
-            
-            <h1 className="text-4xl md:text-7xl font-bold mb-8 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 animate-slideUp">
-              Turn Videos into <span className="text-red-600">SOPs</span><br className="hidden md:inline" />
-              for your business
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-red-50 to-white">
+        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        <div className="container mx-auto px-4 md:px-8 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-slate-900">
+              SOPs that start with your voice, not just your mouse
             </h1>
-            
-            {/* <h2 className="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
-              A Standard Operating Procedure (SOP) is a detailed, written set of step-by-step instructions that describes how to perform a routine business activity. SOPmaker helps e-commerce brands scale efficiently by turning videos into structured SOPs for:
-            </h2> */}
-            
-            <p className="text-xl md:text-2xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed animate-slideUp stagger-delay-1">
-              Stop writing lengthy, tedious instructions. SOPCRAFTER simplifies creating detailed Standard Operating Procedures from your existing process videos, so you can train faster, reduce errors, and scale your e-commerce business with ease.
+            <p className="text-xl md:text-2xl text-slate-600 mb-8">
+              Create engaging, emotion-rich Standard Operating Procedures that your team will actually want to follow.
             </p>
-            
-            {/* Simplified Feature Grid in Hero */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 text-left">
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-100 animate-slideUp stagger-delay-2 transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                <div className="mb-3 flex items-center">
-                  <TrendingUp className="h-6 w-6 text-red-600 mr-3" />
-                  <h3 className="font-semibold text-lg text-slate-800">Scaling Operations</h3>
-                </div>
-                <p className="text-slate-600 text-sm">Train new team members consistently and maintain quality as you grow.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                to={user ? "/dashboard" : "/signup"}
+                className="btn bg-red-600 text-white hover:bg-red-700 font-bold rounded-lg px-8 py-4 text-lg inline-flex items-center justify-center"
+              >
+                {user ? "Go to Dashboard" : "Start Creating SOPs"}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+              <Link 
+                to="/about"
+                className="btn bg-white text-slate-900 hover:bg-slate-50 font-bold rounded-lg px-8 py-4 text-lg inline-flex items-center justify-center border border-slate-200"
+              >
+                Learn More
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Value Proposition */}
+      <section className="py-32 bg-white">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Beyond Basic Screen Recording</h2>
+              <p className="text-xl text-slate-600">We capture not just what you do, but how you feel about it</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-200">
+                <Mic className="h-12 w-12 text-red-600 mb-4" />
+                <h3 className="text-xl font-bold mb-2">Voice-First Approach</h3>
+                <p className="text-slate-600">Start with your natural explanation, then we'll enhance it with visual steps.</p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-100 animate-slideUp stagger-delay-3 transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                <div className="mb-3 flex items-center">
-                  <ShieldCheck className="h-6 w-6 text-red-600 mr-3" />
-                  <h3 className="font-semibold text-lg text-slate-800">Reducing Errors</h3>
-                </div>
-                <p className="text-slate-600 text-sm">Ensure critical tasks like product listings and fulfillment follow exact steps.</p>
+              <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-200">
+                <Heart className="h-12 w-12 text-red-600 mb-4" />
+                <h3 className="text-xl font-bold mb-2">Emotion Tracking</h3>
+                <p className="text-slate-600">Capture the passion and context behind each step of your process.</p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-100 animate-slideUp stagger-delay-4 transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                <div className="mb-3 flex items-center">
-                  <Clock className="h-6 w-6 text-red-600 mr-3" />
-                  <h3 className="font-semibold text-lg text-slate-800">Saving Time</h3>
-                </div>
-                <p className="text-slate-600 text-sm">Delegate confidently to VAs and team members with clear documentation.</p>
+              <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-200">
+                <Eye className="h-12 w-12 text-red-600 mb-4" />
+                <h3 className="text-xl font-bold mb-2">Smart Screen Capture</h3>
+                <p className="text-slate-600">Intelligently captures the most relevant parts of your screen.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-32 bg-slate-50">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose SOPCRAFTER?</h2>
+              <p className="text-xl text-slate-600">We're not just another screen recorder</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-200">
+                <h3 className="text-2xl font-bold mb-4">Dynamic, AI-Formatted Outputs</h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <Check className="h-6 w-6 text-red-600 mr-2 flex-shrink-0" />
+                    <span>Intelligent formatting that adapts to your content</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="h-6 w-6 text-red-600 mr-2 flex-shrink-0" />
+                    <span>Clear, hierarchical structure that's easy to follow</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="h-6 w-6 text-red-600 mr-2 flex-shrink-0" />
+                    <span>Professional formatting that impresses stakeholders</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-200">
+                <h3 className="text-2xl font-bold mb-4">Explanations That Create Connection</h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <Check className="h-6 w-6 text-red-600 mr-2 flex-shrink-0" />
+                    <span>Context-rich explanations that build understanding</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="h-6 w-6 text-red-600 mr-2 flex-shrink-0" />
+                    <span>Emotion-aware content that resonates with your team</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="h-6 w-6 text-red-600 mr-2 flex-shrink-0" />
+                    <span>Stories and examples that make procedures memorable</span>
+                  </li>
+                </ul>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 animate-slideUp stagger-delay-5">
-              <Link 
-                to={user ? "/dashboard" : "/signup"} 
-                className="btn bg-red-600 hover:bg-red-700 text-white text-lg px-10 py-4 transition-all duration-300 hover:scale-105 hover:shadow-lg inline-flex items-center whitespace-nowrap"
-              >
-                {user ? "Go to Dashboard" : "Try it Free"}
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-              <button 
-                onClick={scrollToHowItWorks}
-                className="btn bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 text-lg px-8 py-4"
-              >
-                How It Works
-              </button>
+            <div className="mt-12 text-center">
+              <h3 className="text-2xl font-bold mb-4">Unlike Traditional Tools</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                  <h4 className="font-bold mb-2">Basic Screen Recorders</h4>
+                  <p className="text-slate-600">Just capture clicks and movements</p>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                  <h4 className="font-bold mb-2">Static Documentation</h4>
+                  <p className="text-slate-600">Rigid, one-size-fits-all formats</p>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                  <h4 className="font-bold mb-2">Manual Updates</h4>
+                  <p className="text-slate-600">Time-consuming to maintain</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -133,36 +195,36 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* E-commerce Showcase */}
+      {/* Business Success Section */}
       <section className="py-32 bg-white">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Powering E-commerce Success</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Powering Business Success</h2>
               <p className="text-xl text-slate-600">Join successful businesses scaling their operations with SOPCRAFTER</p>
             </div>
 
-            {/* Platform Types */}
+            {/* Business Types */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
               <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 flex flex-col items-center justify-center text-center">
-                <ShoppingCart className="h-12 w-12 text-red-600 mb-4" />
-                <h3 className="font-semibold text-slate-800">Marketplace Sellers</h3>
-                <p className="text-sm text-slate-600 mt-2">Amazon, eBay, Etsy</p>
+                <Users className="h-12 w-12 text-red-600 mb-4" />
+                <h3 className="font-semibold text-slate-800">Growing Teams</h3>
+                <p className="text-sm text-slate-600 mt-2">Scale your operations efficiently</p>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 flex flex-col items-center justify-center text-center">
-                <Store className="h-12 w-12 text-red-600 mb-4" />
-                <h3 className="font-semibold text-slate-800">Shop Owners</h3>
-                <p className="text-sm text-slate-600 mt-2">Shopify, WooCommerce</p>
+                <BarChart4 className="h-12 w-12 text-red-600 mb-4" />
+                <h3 className="font-semibold text-slate-800">Process Optimization</h3>
+                <p className="text-sm text-slate-600 mt-2">Streamline your workflows</p>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 flex flex-col items-center justify-center text-center">
-                <Package className="h-12 w-12 text-red-600 mb-4" />
-                <h3 className="font-semibold text-slate-800">Dropshippers</h3>
-                <p className="text-sm text-slate-600 mt-2">Multi-platform</p>
+                <ShieldCheck className="h-12 w-12 text-red-600 mb-4" />
+                <h3 className="font-semibold text-slate-800">Quality Assurance</h3>
+                <p className="text-sm text-slate-600 mt-2">Maintain consistent standards</p>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 flex flex-col items-center justify-center text-center">
                 <TrendingUp className="h-12 w-12 text-red-600 mb-4" />
-                <h3 className="font-semibold text-slate-800">Growing Brands</h3>
-                <p className="text-sm text-slate-600 mt-2">All platforms</p>
+                <h3 className="font-semibold text-slate-800">Business Growth</h3>
+                <p className="text-sm text-slate-600 mt-2">Scale with confidence</p>
               </div>
             </div>
 
@@ -548,6 +610,9 @@ const HomePage: React.FC = () => {
       {/* Final CTA */}
       <section className="py-32 bg-red-600 text-white">
         <div className="container mx-auto px-4 md:px-8 text-center animate-slideUp">
+          <div className="flex justify-center mb-8">
+            <img src="/sopcrafter-logo.png" alt="SOPCRAFTER Logo" className="h-16 w-auto" />
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Streamline Your Operations?</h2>
           <p className="text-xl text-red-100 mb-10 max-w-3xl mx-auto">
             Join hundreds of e-commerce businesses creating professional SOPs in minutes, not hours.
