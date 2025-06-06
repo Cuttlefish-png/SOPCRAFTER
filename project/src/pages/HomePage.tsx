@@ -289,7 +289,7 @@ const HomePage: React.FC = () => {
               <div className="relative animate-fadeIn">
                 <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform">
                   <img 
-                    src="/images/workflow-ex.png" 
+                    src="/workflow-ex.png" 
                     alt="Workflow illustration"
                     className="object-cover w-full h-full"
                   />
