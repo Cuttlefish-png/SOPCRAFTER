@@ -133,16 +133,53 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* App Preview */}
-      <section className="pb-32">
+      {/* E-commerce Showcase */}
+      <section className="py-32 bg-white">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-7xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-xl p-6 border border-slate-200 animate-fadeIn">
-              <img 
-                src="https://images.pexels.com/photos/6214476/pexels-photo-6214476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
-                alt="E-commerce Dashboard" 
-                className="w-full h-auto rounded-xl"
-              />
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Powering E-commerce Success</h2>
+              <p className="text-xl text-slate-600">Join successful businesses scaling their operations with SOPCRAFTER</p>
+            </div>
+
+            {/* Platform Types */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 flex flex-col items-center justify-center text-center">
+                <ShoppingCart className="h-12 w-12 text-red-600 mb-4" />
+                <h3 className="font-semibold text-slate-800">Marketplace Sellers</h3>
+                <p className="text-sm text-slate-600 mt-2">Amazon, eBay, Etsy</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 flex flex-col items-center justify-center text-center">
+                <Store className="h-12 w-12 text-red-600 mb-4" />
+                <h3 className="font-semibold text-slate-800">Shop Owners</h3>
+                <p className="text-sm text-slate-600 mt-2">Shopify, WooCommerce</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 flex flex-col items-center justify-center text-center">
+                <Package className="h-12 w-12 text-red-600 mb-4" />
+                <h3 className="font-semibold text-slate-800">Dropshippers</h3>
+                <p className="text-sm text-slate-600 mt-2">Multi-platform</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 flex flex-col items-center justify-center text-center">
+                <TrendingUp className="h-12 w-12 text-red-600 mb-4" />
+                <h3 className="font-semibold text-slate-800">Growing Brands</h3>
+                <p className="text-sm text-slate-600 mt-2">All platforms</p>
+              </div>
+            </div>
+
+            {/* Growth Metrics */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-200 text-center">
+                <div className="text-4xl font-bold text-red-600 mb-2">90%</div>
+                <p className="text-slate-600">Faster SOP Creation</p>
+              </div>
+              <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-200 text-center">
+                <div className="text-4xl font-bold text-red-600 mb-2">75%</div>
+                <p className="text-slate-600">Reduction in Training Time</p>
+              </div>
+              <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-200 text-center">
+                <div className="text-4xl font-bold text-red-600 mb-2">60%</div>
+                <p className="text-slate-600">Fewer Process Errors</p>
+              </div>
             </div>
           </div>
         </div>
