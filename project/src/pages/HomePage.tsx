@@ -287,15 +287,13 @@ const HomePage: React.FC = () => {
                 </div>
               </div>
               <div className="relative animate-fadeIn">
-                <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform">
+                <div className="w-full h-auto max-w-2xl mx-auto rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform">
                   <img 
                     src="/workflow-ex.png" 
                     alt="Workflow illustration"
-                    className="object-cover w-full h-full"
+                    className="object-contain w-full h-full"
                   />
                 </div>
-                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-red-100 rounded-full opacity-50 animate-pulse"></div>
-                <div className="absolute -top-6 -left-6 w-24 h-24 bg-red-100 rounded-full opacity-50 animate-pulse delay-1000"></div>
               </div>
             </div>
           </div>
