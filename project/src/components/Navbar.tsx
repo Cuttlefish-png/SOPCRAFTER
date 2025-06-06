@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2">
-            <img src="/logo.png" alt="SOPcrafter Logo" className="h-8 w-auto block object-contain" />
+            <img src="/sopcrafter-logo.png" alt="SOPcrafter Logo" className="h-8 w-auto block object-contain" />
             <span className="text-xl font-bold text-slate-900">SOPCRAFTER</span>
           </Link>
           
