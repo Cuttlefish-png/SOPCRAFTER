@@ -8,6 +8,9 @@ import PricingPage from './pages/PricingPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import AboutPage from './pages/AboutPage';
+import TermsOfService from './pages/legal/TermsOfService';
+import PrivacyPolicy from './pages/legal/PrivacyPolicy';
+import CookiePolicy from './pages/legal/CookiePolicy';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { SOPCRAFTERProvider } from './contexts/SOPContext';
 
@@ -59,6 +62,11 @@ function App() {
                     </ProtectedRoute>
                   } 
                 />
+
+                {/* Legal Routes */}
+                <Route path="/terms" element={<TermsOfService />} />
+                <Route path="/privacy" element={<PrivacyPolicy />} />
+                <Route path="/cookies" element={<CookiePolicy />} />
               </Routes>
             </main>
             <Footer />
