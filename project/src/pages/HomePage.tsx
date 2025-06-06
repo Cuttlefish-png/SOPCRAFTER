@@ -287,8 +287,6 @@ const HomePage: React.FC = () => {
                     className="object-contain w-full h-full"
                   />
                 </div>
-                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-red-100 rounded-full opacity-50 animate-pulse"></div>
-                <div className="absolute -top-6 -left-6 w-24 h-24 bg-red-100 rounded-full opacity-50 animate-pulse delay-1000"></div>
               </div>
             </div>
           </div>
