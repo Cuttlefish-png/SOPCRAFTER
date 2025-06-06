@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, Video, Upload, Zap, FileText, 
-  Megaphone, TrendingUp, ShieldCheck, Clock, CheckCircle2, Users, BarChart4, ClipboardList, Mic, Heart, Eye, Check 
+  Megaphone, TrendingUp, ShieldCheck, Clock, CheckCircle2, Users, BarChart4, ClipboardList, Mic, Heart, Eye, Check, Sparkles 
 } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -246,7 +246,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Streamline Your Workflows */}
+      {/* Streamline Workflows Section */}
       <section className="py-32 bg-white">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-7xl mx-auto">
@@ -254,34 +254,34 @@ const HomePage: React.FC = () => {
               <div className="space-y-8 animate-fadeIn">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">Streamline Your Workflows</h2>
                 <p className="text-xl text-slate-600 mb-8">
-                  Transform your business processes into clear, actionable SOPs that your team can follow with confidence.
+                  Create, manage, and share SOPs effortlessly with our intuitive platform. From voice recording to final documentation, we've got you covered.
                 </p>
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4 animate-slideInLeft">
                     <div className="flex-shrink-0 w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
-                      <Check className="h-6 w-6 text-red-600" />
+                      <Mic className="h-6 w-6 text-red-600" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold mb-2">Standardize Processes</h3>
-                      <p className="text-slate-600">Create consistent, repeatable workflows that ensure quality and efficiency.</p>
+                      <h3 className="text-xl font-bold mb-2">Voice-First Recording</h3>
+                      <p className="text-slate-600">Record your processes naturally through voice, making documentation feel like a conversation.</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4 animate-slideInLeft delay-200">
                     <div className="flex-shrink-0 w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
-                      <Users className="h-6 w-6 text-red-600" />
+                      <Sparkles className="h-6 w-6 text-red-600" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold mb-2">Empower Your Team</h3>
-                      <p className="text-slate-600">Give your team the tools they need to perform at their best.</p>
+                      <h3 className="text-xl font-bold mb-2">AI-Powered Enhancement</h3>
+                      <p className="text-slate-600">Our AI transforms your voice into professional, structured documentation.</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4 animate-slideInLeft delay-300">
                     <div className="flex-shrink-0 w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
-                      <TrendingUp className="h-6 w-6 text-red-600" />
+                      <Users className="h-6 w-6 text-red-600" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold mb-2">Scale with Confidence</h3>
-                      <p className="text-slate-600">Grow your business knowing your processes are documented and optimized.</p>
+                      <h3 className="text-xl font-bold mb-2">Team Collaboration</h3>
+                      <p className="text-slate-600">Enable your team to contribute and improve processes together.</p>
                     </div>
                   </div>
                 </div>
@@ -289,8 +289,8 @@ const HomePage: React.FC = () => {
               <div className="relative animate-fadeIn">
                 <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform">
                   <img 
-                    src="/images/workflow-illustration.svg" 
-                    alt="Workflow optimization illustration"
+                    src="/images/workflow-ex.png" 
+                    alt="Workflow illustration"
                     className="object-cover w-full h-full"
                   />
                 </div>
