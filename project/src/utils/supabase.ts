@@ -3,17 +3,30 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-// Ensure environment variables are loaded
-if (!supabaseUrl || !supabaseAnonKey) {
-  console.error('Missing Supabase environment variables. Check your .env file and ensure VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY are set.');
-  // Depending on your setup, you might want to throw an error or handle this differently
-  // For now, we will proceed but the client might not work correctly
-}
+// Create a mock client when environment variables are missing
+const createMockClient = () => {
+  console.warn('Using mock Supabase client - authentication and data persistence are disabled');
+  return {
+    auth: {
+      signIn: async () => ({ data: { user: null }, error: null }),
+      signUp: async () => ({ data: { user: null }, error: null }),
+      signOut: async () => ({ error: null }),
+      getSession: async () => ({ data: { session: null }, error: null }),
+      onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => {} } } }),
+    },
+    from: () => ({
+      select: () => ({ data: [], error: null }),
+      insert: () => ({ data: null, error: null }),
+      update: () => ({ data: null, error: null }),
+      delete: () => ({ data: null, error: null }),
+    }),
+  };
+};
 
-export const supabase = createClient(
-  supabaseUrl as string,
-  supabaseAnonKey as string
-);
+// Use real client if environment variables are present, otherwise use mock
+export const supabase = supabaseUrl && supabaseAnonKey
+  ? createClient(supabaseUrl, supabaseAnonKey)
+  : createMockClient();
 
 // Optional: Define types for your database schema for better type safety
 // Example types (adjust based on your actual database schema)
